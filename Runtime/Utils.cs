@@ -17,14 +17,15 @@ namespace Dracau
         //Get center of two 3D vectors
         public static Vector3 GetMiddlePoint(Vector3 firstVector, Vector3 secondVector)
         {
-            return new Vector3((firstVector.x+secondVector.x)*0.5f,(firstVector.y+secondVector.y)*0.5f,(firstVector.z+secondVector.z)*0.5f);
+            return (firstVector + secondVector) * 0.5f;
         }
         
         //Get center of two 2D vectors
         public static Vector2 GetMiddlePoint(Vector2 firstVector, Vector2 secondVector)
         {
-            return new Vector3((firstVector.x+secondVector.x)*0.5f,(firstVector.y+secondVector.y)*0.5f);
+            return (firstVector + secondVector) * 0.5f;
         }
+        
         
         //
         //  Miscellaneous
