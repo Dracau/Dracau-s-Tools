@@ -1,5 +1,11 @@
 {
 	"name": "com.dracau.tools",
-	"version": "0.0.1-preview.1",
-	"displayName": "Dracau's Tools"
+	"version": "0.0.1",
+	"displayName": "Dracau's Tools",
+	"description": "This is an utility package.",
+
+  	"author": {
+    		"name": "Gautier Debreu aka Dracau",
+    		"email": "gautierdebpro@gmail.com"
+  	}
 }

@@ -9,10 +9,21 @@ namespace Dracau
 {
     public class ToolMenu : MonoBehaviour
     {
-        [MenuItem("Tools/Setup/Create Default Directories")]
-        public static void CreateDefaulFolders()
+        [MenuItem("Tools/Setup/Create Default Directories/2D")]
+        public static void CreateDefaulFolder3D()
         {
-            CreateDirs("","Scenes", "Editor", "Prefabs", "Scripts", "Art");
+            CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
+            CreateDirs("Art", "Sprites");
+            CreateDirs("Scriptable Objects","Scripts");
+            AssetDatabase.Refresh();
+        }
+        
+        [MenuItem("Tools/Setup/Create Default Directories/3D")]
+        public static void CreateDefaulFolders2D()
+        {
+            CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
+            CreateDirs("Art", "Meshes", "Materials","Shaders");
+            CreateDirs("Scriptable Objects","Scripts");
             AssetDatabase.Refresh();
         }
 
