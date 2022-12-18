@@ -22,7 +22,7 @@ namespace Dracau
         public static void CreateDefaulFolders2D()
         {
             CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
-            CreateDirs("Art", "Meshes", "Materials","Shaders");
+            CreateDirs("Art", "Meshes", "Animations", "Materials","Shaders");
             CreateDirs("Scriptable Objects","Scripts");
             AssetDatabase.Refresh();
         }
