@@ -5,13 +5,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Dracau
 {
     public static class Utils
     {
         //
-        //  Vector operations
+        //  Vector Operations
         //
         
         //Get center of two 3D vectors
@@ -28,18 +31,44 @@ namespace Dracau
         
         
         //
+        // Handles Things
+        //
+
+        //Draw Bezier curve between two objects
+        public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos)
+        {
+            float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
+            Vector3 offset = Vector3.up * halfHeight;
+            Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,Color.black,EditorGUIUtility.whiteTexture,1f);
+        }
+        
+        //Draw Bezier curve between two objects, with custom color
+        public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos, Color color)
+        {
+            float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
+            Vector3 offset = Vector3.up * halfHeight;
+            Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,color,EditorGUIUtility.whiteTexture,1f);
+        }
+        
+        
+        //
         //  Miscellaneous
         //
         
         //Reduce garbage collection due to "new WaitForSeconds" situations
         private static readonly Dictionary<float, WaitForSeconds> waitDictionary = new Dictionary<float, WaitForSeconds>();
-
         public static WaitForSeconds GetWaitForSeconds(float time)
         {
             if (waitDictionary.TryGetValue(time, out WaitForSeconds wait)) return wait;
             
             waitDictionary[time] = new WaitForSeconds(time);
             return waitDictionary[time];
+        }
+        
+        //Clears WaitForSeconds Dictionary
+        public static void EmptyWaitForSeconds()
+        {
+            waitDictionary.Clear();
         }
         
         //Delete all children of a Transform
