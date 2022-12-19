@@ -35,20 +35,24 @@ namespace Dracau
         //
 
         //Draw Bezier curve between two objects
+        #if UNITY_EDITOR
         public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos)
         {
             float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
             Vector3 offset = Vector3.up * halfHeight;
             Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,Color.black,EditorGUIUtility.whiteTexture,1f);
         }
+        #endif
         
         //Draw Bezier curve between two objects, with custom color
+        #if UNITY_EDITOR
         public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos, Color color)
         {
             float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
             Vector3 offset = Vector3.up * halfHeight;
             Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,color,EditorGUIUtility.whiteTexture,1f);
         }
+        #endif
         
         
         //

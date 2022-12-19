@@ -1,8 +1,10 @@
 {
-    "name": "Dracau Tools",
+    "name": "Dracau Tools Editor",
     "rootNamespace": "",
     "references": [],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
