@@ -15,18 +15,20 @@ namespace Dracau
         private GameObject objectInstance;
         [SerializeField] private List<PoolKey> poolKeys = new List<PoolKey>();
 
-        [System.Serializable]
+        [Serializable]
         public class Pool
         {
             public GameObject prefab;
             public Queue<GameObject> queue = new Queue<GameObject>();
 
-            public int baseCount;
+            [Space(15)]public int baseCount;
             public float baseRefreshSpeed = 5;
             public float refreshSpeed = 5;
+            [Space(15),ReadOnly] public int currentCount;
+            [ReadOnly] public int currentActiveCount;
         }
         
-        [System.Serializable]
+        [Serializable]
         public class PoolKey
         {
             public string key;
@@ -61,6 +63,7 @@ namespace Dracau
             objectInstance = Instantiate(pool.prefab, transform);
             objectInstance.SetActive(false);
             pool.queue.Enqueue(objectInstance);
+            pool.currentCount++;
         }
 
         private int i; 
@@ -114,13 +117,15 @@ namespace Dracau
                 objectInstance = pools[key].queue.Dequeue();
                 objectInstance.SetActive(true);
             }
-
+            pools[key].currentActiveCount++;
+            
             return objectInstance;
         }
 
         public void DePop(string key, GameObject go)
         {
             pools[key].queue.Enqueue(go);
+            pools[key].currentActiveCount--;
 
             go.transform.parent = transform;
             go.SetActive(false);
