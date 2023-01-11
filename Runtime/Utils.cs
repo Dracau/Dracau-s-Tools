@@ -57,7 +57,7 @@ namespace Dracau
         /// </summary>
         /// <param name="firstVector"></param>
         /// <param name="secondVector"></param>
-        /// <returns></returns>
+        /// <returns>Middle point as a Vector3</returns>
         public static Vector3 GetMiddlePoint(Vector3 firstVector, Vector3 secondVector)
         {
             return (firstVector + secondVector) * 0.5f;
@@ -68,7 +68,7 @@ namespace Dracau
         /// </summary>
         /// <param name="firstVector"></param>
         /// <param name="secondVector"></param>
-        /// <returns></returns>
+        /// <returns>Middle point as a Vector2</returns>
         public static Vector2 GetMiddlePoint(Vector2 firstVector, Vector2 secondVector)
         {
             return (firstVector + secondVector) * 0.5f;
@@ -83,7 +83,6 @@ namespace Dracau
         /// Reduces garbage collection due to repeated "new WaitForSeconds"
         /// </summary>
         /// <param name="time">Time in seconds to wait</param>
-        /// <returns></returns>
         public static WaitForSeconds GetWaitForSeconds(float time)
         {
             if (waitDictionary.TryGetValue(time, out WaitForSeconds wait)) return wait;
