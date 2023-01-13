@@ -107,7 +107,7 @@ namespace Dracau
         {
             for (int i = 0; i < transform.childCount; i++)
             {
-                Object.Destroy(transform.GetChild(i));
+                Object.Destroy(transform.GetChild(i).gameObject);
             }
         }
         #endregion
