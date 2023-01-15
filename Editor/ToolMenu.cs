@@ -11,7 +11,7 @@ namespace Dracau
     {
         
         [MenuItem("Tools/Setup/Create Default Directories/2D")]
-        public static void CreateDefaulFolders3D()
+        public static void CreateDefaultFolders3D()
         {
             CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
             CreateDirs("Art", "Sprites");
@@ -21,7 +21,7 @@ namespace Dracau
         }
         
         [MenuItem("Tools/Setup/Create Default Directories/3D")]
-        public static void CreateDefaulFolders2D()
+        public static void CreateDefaultFolders2D()
         {
             CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
             CreateDirs("Art", "Meshes", "Animations", "Materials","Shaders");
