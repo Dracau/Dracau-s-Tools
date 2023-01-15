@@ -40,6 +40,7 @@ namespace Dracau
             instance = this;
             InitPools();
             PopulatePools();
+            Debug.Log("a".Bold());
         }
 
         void PopulatePools()

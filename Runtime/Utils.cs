@@ -77,7 +77,7 @@ namespace Dracau
         #endregion
 
         #region Miscellaneous
-        
+
         private static readonly Dictionary<float, WaitForSeconds> waitDictionary = new Dictionary<float, WaitForSeconds>();
         /// <summary>
         /// Reduces garbage collection due to repeated "new WaitForSeconds"
@@ -113,3 +113,4 @@ namespace Dracau
         #endregion
     }
 }
+
