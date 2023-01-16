@@ -11,12 +11,30 @@ namespace Dracau
     /// </summary>
     public static class Utils
     {
+        #region Debug
+
+        public static void ShowNotificationOnScenes(string message)
+        {
+            #if UNITY_EDITOR
+            SceneView.lastActiveSceneView.ShowNotification(new GUIContent(message),1f);
+            SceneView.lastActiveSceneView.Repaint();
+            #endif
+        }
+        public static void ShowNotificationOnScenes(string message, float time)
+        {
+            #if UNITY_EDITOR
+            SceneView.lastActiveSceneView.ShowNotification(new GUIContent(message),time);
+            SceneView.lastActiveSceneView.Repaint();
+            #endif
+        }
+
+        #endregion
+        
         #region UI
 
         #region Handles
 
         //Draw Bezier curve between two objects
-        #if UNITY_EDITOR
         /// <summary>
         /// Draw Bezier given an origin and target position
         /// </summary>
@@ -24,13 +42,13 @@ namespace Dracau
         /// <param name="targetPos">Target Position</param>
         public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos)
         {
+            #if UNITY_EDITOR
             float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
             Vector3 offset = Vector3.up * halfHeight;
             Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,Color.black,EditorGUIUtility.whiteTexture,1f);
+            #endif
         }
-        #endif
         
-        #if UNITY_EDITOR
         /// <summary>
         /// Draw Bezier given an origin and target position and a color
         /// </summary>
@@ -39,12 +57,13 @@ namespace Dracau
         /// <param name="color">Color of the Bezier</param>
         public static void DrawSimpleBezier(Vector3 srcPos, Vector3 targetPos, Color color)
         {
+            #if UNITY_EDITOR
             float halfHeight = (srcPos.y - targetPos.y) * 0.5f;
             Vector3 offset = Vector3.up * halfHeight;
             Handles.DrawBezier(srcPos, targetPos,srcPos-offset,targetPos+offset,color,EditorGUIUtility.whiteTexture,1f);
+            #endif
         }
-        #endif
-
+        
         #endregion
         #endregion
         

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +6,6 @@ namespace Dracau
 {
     public class ToolMenu : MonoBehaviour
     {
-        
         [MenuItem("Tools/Setup/Create Default Directories/2D")]
         public static void CreateDefaultFolders3D()
         {
@@ -17,6 +13,8 @@ namespace Dracau
             CreateDirs("Art", "Sprites");
             CreateDirs("Scriptable Objects","Scripts");
             AssetDatabase.Refresh();
+            
+            Utils.ShowNotificationOnScenes("Created default directories for 2D project.",1.5f);
             Debug.Log("Created default directories for 2D project.".Color(Color.red).Bold());
         }
         
@@ -27,6 +25,8 @@ namespace Dracau
             CreateDirs("Art", "Meshes", "Animations", "Materials","Shaders");
             CreateDirs("Scriptable Objects","Scripts");
             AssetDatabase.Refresh();
+            
+            Utils.ShowNotificationOnScenes("Created default directories for 3D project.",1.5f);
             Debug.Log("Created default directories for 3D project.".Color(Color.red).Bold());
         }
 
