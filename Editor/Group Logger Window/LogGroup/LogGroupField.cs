@@ -19,7 +19,7 @@ public class LogGroupField : VisualElement
 
     private void Init()
     {
-        visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/package/Dracau-s-Tools/Editor/Group Logger Window/LogGroup/LogGroup.uxml");
+        visualTreeAsset = Resources.Load("LogGroup") as VisualTreeAsset;
         Add(visualTreeAsset.Instantiate());
         Bind();
     }
