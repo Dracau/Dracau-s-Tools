@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-between;">
+        <ui:Toggle text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" name="toggle" style="max-width: 65%;" />
+        <ui:Button text="Delete" display-tooltip-when-elided="true" name="deleteButton" style="align-items: center; flex-direction: column;" />
+    </ui:VisualElement>
+</ui:UXML>

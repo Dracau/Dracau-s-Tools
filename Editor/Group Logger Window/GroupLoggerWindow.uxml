@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:TextField picking-mode="Ignore" value="filler text" text="New log group name..." name="newLogGroupName" />
+    <ui:Button text="Add Group Name" display-tooltip-when-elided="true" name="addGroupButton" />
+    <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="logGroupsView" />
+</ui:UXML>
