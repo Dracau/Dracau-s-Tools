@@ -37,7 +37,6 @@ namespace Dracau
             #if UNITY_EDITOR
             if(groupLoggerData == null)
             {
-                Debug.Log("GroupLoggerData not found, creating new one");
                 groupLoggerData = Resources.Load("GroupLoggerData") as GroupLoggerData;
             }
             foreach (LogGroup logGroup in groupLoggerData.logGroups)
