@@ -6,7 +6,7 @@ namespace Dracau
 {
     public class ToolMenu : MonoBehaviour
     {
-        [MenuItem("Tools/Setup/Create Default Directories/2D")]
+        [MenuItem("Tools/Dracau's Tools/Create Default Directories/2D")]
         public static void CreateDefaultFolders3D()
         {
             CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
@@ -18,7 +18,7 @@ namespace Dracau
             Debug.Log("Created default directories for 2D project.".Color(Color.red).Bold());
         }
         
-        [MenuItem("Tools/Setup/Create Default Directories/3D")]
+        [MenuItem("Tools/Dracau's Tools/Create Default Directories/3D")]
         public static void CreateDefaultFolders2D()
         {
             CreateDirs("","Scenes", "Editor", "Prefabs", "Scriptable Objects", "Scripts", "Art");
