@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -96,6 +97,16 @@ namespace Dracau
         #endregion
 
         #region Miscellaneous
+
+        /// <summary>
+        /// Cleanup string from every character that isn't a number or a letter.
+        /// </summary>
+        /// <param name="input">Input string</param>
+        /// <returns>Cleaned up string</returns>
+        public static string CleanupString(string input)
+        {
+            return Regex.Replace(input, @"[^a-zA-Z0-9]", "");
+        }
 
         private static readonly Dictionary<float, WaitForSeconds> waitDictionary = new Dictionary<float, WaitForSeconds>();
         /// <summary>
