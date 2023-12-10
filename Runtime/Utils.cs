@@ -105,7 +105,7 @@ namespace Dracau
         /// <returns>Cleaned up string</returns>
         public static string CleanupString(string input)
         {
-            return Regex.Replace(input, @"[^a-zA-Z0-9]", "");
+            return Regex.Replace(input, @"[^a-zA-Z0-9\t]", "");
         }
 
         private static readonly Dictionary<float, WaitForSeconds> waitDictionary = new Dictionary<float, WaitForSeconds>();
