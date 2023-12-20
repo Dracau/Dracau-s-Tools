@@ -99,6 +99,26 @@ namespace Dracau
         #region Miscellaneous
 
         /// <summary>
+        /// Copy Component and its fields to a destination gameobject
+        /// </summary>
+        /// <param name="original">The component to copy</param>
+        /// <param name="destination">Destination gameobject to copy the component to</param>
+        /// <typeparam name="T">Type of the component</typeparam>
+        /// <returns></returns>
+        static T CopyComponent<T>(T original, GameObject destination) where T : Component
+        {
+            System.Type type = original.GetType();
+            Component copy = destination.AddComponent(type);
+            System.Reflection.FieldInfo[] fields = type.GetFields();
+            foreach (System.Reflection.FieldInfo field in fields)
+            {
+                field.SetValue(copy, field.GetValue(original));
+            }
+
+            return copy as T;
+        }
+
+        /// <summary>
         /// Cleanup string from every character that isn't a number or a letter.
         /// </summary>
         /// <param name="input">Input string</param>
